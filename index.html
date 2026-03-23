@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RemoteJobSearch.org — Stop Wasting Time on Fake Remote Jobs</title>
+<meta name="description" content="Get real remote roles daily, with a tailored resume for each, on autopilot.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0a0a0a; --bg2: #111; --border: #222; --text: #f5f5f5;
+    --muted: #71717a; --dim: #3f3f46; --green: #4ade80;
+  }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; }
+
+  /* NAV */
+  nav { border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; }
+  .nav-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-weight: 700; font-size: 1.1rem; }
+  .logo span { color: var(--muted); }
+  .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+  .nav-links a { color: var(--muted); font-size: 0.875rem; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  .btn-primary { background: #fff; color: #000; font-weight: 600; padding: 0.5rem 1.25rem; border-radius: 6px; font-size: 0.875rem; transition: background 0.2s; }
+  .btn-primary:hover { background: #e4e4e7; }
+
+  /* SECTIONS */
+  section { padding: 5rem 1.5rem; }
+  .container { max-width: 960px; margin: 0 auto; }
+  .container-sm { max-width: 720px; margin: 0 auto; }
+  .label { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 1.25rem; }
+
+  /* HERO */
+  .hero { padding: 6rem 1.5rem; }
+  .hero h1 { font-size: clamp(2.2rem, 6vw, 3.75rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.25rem; }
+  .hero p { font-size: 1.2rem; color: #d4d4d8; max-width: 600px; margin-bottom: 2.5rem; line-height: 1.7; }
+  .cta-group { display: flex; flex-wrap: wrap; gap: 1rem; }
+  .btn-lg { padding: 1rem 2rem; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.2s; display: inline-block; }
+  .btn-white { background: #fff; color: #000; }
+  .btn-white:hover { background: #e4e4e7; }
+  .btn-outline { border: 1px solid var(--border); color: #d4d4d8; }
+  .btn-outline:hover { border-color: #52525b; color: #fff; }
+
+  /* STATS */
+  .stats { background: #0d0d0d; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 4rem 1.5rem; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2.5rem; text-align: center; max-width: 960px; margin: 0 auto; }
+  .stat-value { font-size: 3.5rem; font-weight: 700; line-height: 1; margin-bottom: 0.5rem; }
+  .stat-label { color: var(--muted); font-size: 0.875rem; }
+  .source { text-align: center; color: var(--dim); font-size: 0.75rem; margin-top: 2rem; max-width: 960px; margin-left: auto; margin-right: auto; }
+
+  /* PROBLEM */
+  .problem h2 { font-size: clamp(1.6rem, 4vw, 2.25rem); font-weight: 700; margin-bottom: 2rem; }
+  .problem p { font-size: 1.1rem; color: #d4d4d8; margin-bottom: 1.25rem; line-height: 1.8; }
+  .problem .callout { color: #fff; font-weight: 600; font-size: 1.2rem; margin-top: 2rem; }
+
+  /* HOW IT WORKS */
+  .how { background: #0d0d0d; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .how h2 { font-size: clamp(1.6rem, 4vw, 2.25rem); font-weight: 700; margin-bottom: 0.75rem; }
+  .how-sub { color: var(--muted); font-size: 1.1rem; margin-bottom: 3.5rem; }
+  .steps { display: flex; flex-direction: column; gap: 3rem; }
+  .step { display: flex; gap: 2rem; }
+  .step-num { color: var(--dim); font-weight: 700; font-size: 1.4rem; width: 2rem; flex-shrink: 0; padding-top: 0.2rem; }
+  .step-title { color: #fff; font-weight: 600; font-size: 1.15rem; margin-bottom: 0.6rem; }
+  .step-body { color: #a1a1aa; line-height: 1.75; }
+
+  /* COMPARISON */
+  .compare h2 { font-size: clamp(1.6rem, 4vw, 2.25rem); font-weight: 700; margin-bottom: 3rem; }
+  .table { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .table-header { display: grid; grid-template-columns: 1fr 1fr; background: #111; }
+  .table-header div { padding: 1rem 1.5rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+  .table-header div:first-child { color: var(--muted); border-right: 1px solid var(--border); }
+  .table-header div:last-child { color: #d4d4d8; }
+  .table-row { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--border); }
+  .table-row:nth-child(even) { background: #0d0d0d; }
+  .table-row div { padding: 1.1rem 1.5rem; font-size: 0.9rem; line-height: 1.5; }
+  .table-row div:first-child { color: var(--muted); border-right: 1px solid var(--border); }
+  .table-row div:last-child { color: #e4e4e7; }
+
+  /* PROOF */
+  .proof { background: #0d0d0d; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .proof h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 2.5rem; }
+  .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+  .proof-card { border: 1px solid var(--border); border-radius: 8px; aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; background: #111; color: var(--dim); font-size: 0.85rem; }
+
+  /* OFFER */
+  .offer { text-align: center; }
+  .offer h2 { font-size: clamp(1.6rem, 4vw, 2.25rem); font-weight: 700; margin-bottom: 0.75rem; }
+  .offer-sub { color: var(--muted); margin-bottom: 3rem; }
+  .pricing-box { border: 1px solid #3f3f46; border-radius: 14px; padding: 2.5rem; background: #111; max-width: 480px; margin: 0 auto 1.5rem; }
+  .price-label { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.5rem; }
+  .price { font-size: 4rem; font-weight: 700; margin-bottom: 2rem; }
+  .feature-list { list-style: none; text-align: left; margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .feature-list li { display: flex; gap: 0.75rem; font-size: 0.9rem; color: #d4d4d8; align-items: flex-start; }
+  .check { color: var(--green); flex-shrink: 0; margin-top: 0.1rem; }
+  .btn-buy { display: block; width: 100%; background: #fff; color: #000; font-weight: 700; padding: 1.1rem; border-radius: 8px; font-size: 1.1rem; cursor: pointer; transition: background 0.2s; border: none; }
+  .btn-buy:hover { background: #e4e4e7; }
+  .fine-print { color: var(--dim); font-size: 0.75rem; margin-top: 1rem; }
+
+  /* FAQ */
+  .faq { background: #0d0d0d; border-top: 1px solid var(--border); }
+  .faq h2 { font-size: clamp(1.6rem, 4vw, 2rem); font-weight: 700; margin-bottom: 3rem; }
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 1.75rem 0; }
+  .faq-q { color: #fff; font-weight: 600; font-size: 1.05rem; margin-bottom: 0.75rem; }
+  .faq-a { color: #a1a1aa; line-height: 1.75; }
+
+  /* FINAL CTA */
+  .final-cta { text-align: center; }
+  .final-cta h2 { font-size: clamp(1.6rem, 4vw, 2.25rem); font-weight: 700; margin-bottom: 1rem; }
+  .final-cta p { color: var(--muted); margin-bottom: 2.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding: 2.5rem 1.5rem; }
+  .footer-inner { max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+  .footer-inner p { color: var(--muted); font-size: 0.875rem; }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { color: var(--muted); font-size: 0.875rem; transition: color 0.2s; }
+  .footer-links a:hover { color: #fff; }
+
+  @media (max-width: 600px) {
+    .nav-links .nav-how { display: none; }
+    .table-row div, .table-header div { padding: 0.9rem 1rem; font-size: 0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">RemoteJobSearch<span>.org</span></a>
+    <div class="nav-links">
+      <a href="#how" class="nav-how">How It Works</a>
+      <a href="#pricing" class="btn-primary">Get Access — $49</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container-sm">
+    <p class="label">Remote Job Search Engine</p>
+    <h1>Stop wasting time on fake remote jobs.</h1>
+    <p>Get real remote roles daily, with a tailored resume for each, on autopilot. The engine verifies remote status before it does any work on a role.</p>
+    <div class="cta-group">
+      <a href="#pricing" class="btn-lg btn-white">Get Access — $49 one-time</a>
+      <a href="#tips" class="btn-lg btn-outline">Get free remote job search tips</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-grid">
+    <div><div class="stat-value">6%</div><div class="stat-label">of job postings are genuinely remote</div></div>
+    <div><div class="stat-value">94%</div><div class="stat-label">of listings you scroll through aren't available to you</div></div>
+    <div><div class="stat-value">87%</div><div class="stat-label">of roles require on-site attendance</div></div>
+  </div>
+  <p class="source">Sources: BenefitsPro Jan 2026 &nbsp;|&nbsp; Cultivated Culture State of Remote Jobs 2025</p>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container-sm">
+    <h2>The remote job market is shrinking — and most boards make it harder to find the real ones.</h2>
+    <p>In 2025, only 6% of U.S. job postings were fully remote. That number is declining. Which means 94% of what appears in your feed was never available to you.</p>
+    <p>Of the roles that do appear under a "remote" filter, many are mislabeled. Listings tagged remote frequently describe hybrid arrangements, city-specific roles, or positions that require frequent regional travel.</p>
+    <p>You spend 30 to 60 minutes tailoring a resume and cover letter — then discover the role requires three days a week in an office. That's not just a time problem. That's a hope problem.</p>
+    <p class="callout">The job search process is designed to make you do that again tomorrow.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="container-sm">
+    <h2>How it works</h2>
+    <p class="how-sub">Five phases. No manual gates. Runs end-to-end every day.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><div><div class="step-title">Remote verification first</div><div class="step-body">Before any work is done, the engine checks the listing label and the full job description body. If there's a city requirement, an office mandate, or hybrid language buried in the description — the role is rejected and logged. You never see it.</div></div></div>
+      <div class="step"><div class="step-num">02</div><div><div class="step-title">Multi-board search, daily</div><div class="step-body">The engine searches LinkedIn, We Work Remotely, Remote OK, Himalayas, and Wellfound in a single run. It aggregates only roles posted in the last 48 hours that match your target titles and seniority.</div></div></div>
+      <div class="step"><div class="step-num">03</div><div><div class="step-title">Resume customized per role</div><div class="step-body">Your master resume is tailored to each job description automatically. No templates. No generic rewrites. The engine maps JD keywords to your real experience and applies changes — then saves a changelog so you know exactly what shifted.</div></div></div>
+      <div class="step"><div class="step-num">04</div><div><div class="step-title">Cover letter written per role</div><div class="step-body">The engine reads the job description for a specific signal — a real hook that connects your proof to the company's need. If no signal exists, no letter is written. You only get cover letters worth sending.</div></div></div>
+      <div class="step"><div class="step-num">05</div><div><div class="step-title">Delivered to your inbox</div><div class="step-body">Each morning you get an email: roles ready, files linked, and a rejection log showing what was caught and why. On slow days: "Nothing found today." You always know the engine ran.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="compare">
+  <div class="container">
+    <h2>Most tools treat remote as a filter. This one treats it as a gate.</h2>
+    <div class="table">
+      <div class="table-header"><div>Generic tools</div><div>Remote Job Search Engine</div></div>
+      <div class="table-row"><div>Filter for "remote" — fake roles get through</div><div>Remote verification is the primary gate</div></div>
+      <div class="table-row"><div>Search one board manually</div><div>Aggregates 5+ remote-first boards daily</div></div>
+      <div class="table-row"><div>Resume templates you edit yourself</div><div>Customizes your actual resume per JD</div></div>
+      <div class="table-row"><div>Generic AI cover letters</div><div>Signal-gated letters — no signal, no letter</div></div>
+      <div class="table-row"><div>Daily manual effort required</div><div>Fully automated — delivers to inbox</div></div>
+      <div class="table-row"><div>One-size-fits-all output</div><div>Configurable for any function or seniority</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof">
+  <div class="container">
+    <h2>See it in action</h2>
+    <div class="proof-grid">
+      <div class="proof-card">[Gmail summary output]</div>
+      <div class="proof-card">[Tailored resume sample]</div>
+      <div class="proof-card">[Cover letter output]</div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer" id="pricing">
+  <div class="container">
+    <h2>One-time. Instant access.</h2>
+    <p class="offer-sub">No subscription. No recurring fees. Lifetime access and updates.</p>
+    <div class="pricing-box">
+      <p class="price-label">One-time purchase</p>
+      <p class="price">$49</p>
+      <ul class="feature-list">
+        <li><span class="check">&#10003;</span>Remote Job Search Engine (Claude workflow)</li>
+        <li><span class="check">&#10003;</span>Setup instructions — under 10 minutes</li>
+        <li><span class="check">&#10003;</span>Pre-vetted job board list (8 boards)</li>
+        <li><span class="check">&#10003;</span>Resume customization framework</li>
+        <li><span class="check">&#10003;</span>Signal-gated cover letter system</li>
+        <li><span class="check">&#10003;</span>Lifetime access and updates</li>
+        <li><span class="check">&#10003;</span>Email support</li>
+      </ul>
+      <!-- TODO: Replace href with Stripe payment link -->
+      <a href="#checkout-placeholder" class="btn-buy">Get Access — $49</a>
+      <p class="fine-print">Instant download after purchase. Also delivered via email.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container-sm">
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q">What exactly am I buying?</div><div class="faq-a">A Claude workflow (SKILL.md file) with full setup instructions, a pre-vetted job board list, resume customization rules, and cover letter framework. You configure it once with your resume and target roles. After that it runs on a daily schedule.</div></div>
+      <div class="faq-item"><div class="faq-q">Do I need to know how to code?</div><div class="faq-a">No. Setup takes under 10 minutes. You fill in a config block with your name, target titles, and resume location. The engine does the rest.</div></div>
+      <div class="faq-item"><div class="faq-q">What is a fake remote job?</div><div class="faq-a">A role listed as remote that actually requires office presence, a specific city, hybrid attendance, or frequent regional travel. These are common — and they waste time. This engine catches them before doing any work on the role.</div></div>
+      <div class="faq-item"><div class="faq-q">How is this different from a job board's remote filter?</div><div class="faq-a">Job board filters rely on self-reported tags from employers. This engine reads the full job description body and rejects roles where the description contradicts the remote label. It also aggregates multiple boards and customizes your application materials — boards don't do that.</div></div>
+      <div class="faq-item"><div class="faq-q">Do I need Claude Pro?</div><div class="faq-a">Yes. This workflow runs inside Claude with computer use enabled. A Claude Pro or Team subscription is required.</div></div>
+      <div class="faq-item"><div class="faq-q">What if I'm not satisfied?</div><div class="faq-a">If you set it up and it doesn't work as described, email for a full refund. No questions asked.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Start your automated remote job search today.</h2>
+    <p>Set it up once. Let it run every day. Get only roles that are actually remote.</p>
+    <div class="cta-group" style="justify-content:center">
+      <a href="#pricing" class="btn-lg btn-white">Get Access — $49</a>
+      <a href="#tips" class="btn-lg btn-outline">Not ready? Get free tips first.</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p>&copy; 2026 RemoteJobSearch.org</p>
+    <div class="footer-links">
+      <a href="#tips">Free Tips</a>
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
