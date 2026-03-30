@@ -1,1 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Spot Fake Remote Jobs | RemoteJobSearch.org</title>
+  <meta name="description" content="Most remote job listings are mislabeled. Here is how to identify fake remote jobs before you waste time applying." />
+  <link rel="canonical" href="https://www.remotejobsearch.org/blog/how-to-spot-fake-remote-jobs" />
 
+  <meta property="og:title" content="How to Spot Fake Remote Jobs" />
+  <meta property="og:description" content="Most remote job listings are mislabeled. Here is how to identify fake remote jobs before you waste time applying." />
+  <meta property="og:url" content="https://www.remotejobsearch.org/blog/how-to-spot-fake-remote-jobs" />
+  <meta property="og:type" content="article" />
+
+  <!-- Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Spot Fake Remote Jobs",
+    "description": "Most remote job listings are mislabeled. Here is how to identify fake remote jobs before you waste time applying.",
+    "url": "https://www.remotejobsearch.org/blog/how-to-spot-fake-remote-jobs",
+    "publisher": {
+      "@type": "Organization",
+      "name": "RemoteJobSearch.org",
+      "url": "https://www.remotejobsearch.org"
+    }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #ffffff; --bg2: #f9f9f9; --border: #e4e4e7; --text: #0a0a0a;
+      --muted: #52525b; --dim: #a1a1aa; --green: #16a34a;
+    }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav { border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; }
+    .nav-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-weight: 700; font-size: 1.1rem; }
+    .logo span { color: var(--muted); }
+    .btn-primary { background: #000; color: #fff; font-weight: 600; padding: 0.5rem 1.1rem; border-radius: 6px; font-size: 0.875rem; transition: background 0.2s; }
+    .btn-primary:hover { background: #27272a; }
+
+    /* PAGE LAYOUT */
+    .page-wrap { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    /* BREADCRUMB */
+    .breadcrumb { font-size: 0.8rem; color: var(--dim); margin-bottom: 2rem; }
+    .breadcrumb a { color: var(--dim); }
+    .breadcrumb a:hover { color: var(--muted); }
+    .breadcrumb span { margin: 0 0.4rem; }
+
+    /* BLOG HEADER */
+    .blog-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+    .blog-title { font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.25rem; }
+    .blog-meta { font-size: 0.8rem; color: var(--dim); margin-bottom: 1.5rem; }
+    .blog-lead { font-size: 1.1rem; color: var(--muted); line-height: 1.7; margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 2rem; }
+
+    /* BLOG BODY */
+    .blog-body h2 { font-size: 1.35rem; font-weight: 700; margin: 2.5rem 0 0.75rem; }
+    .blog-body h3 { font-size: 1.05rem; font-weight: 700; margin: 1.75rem 0 0.5rem; color: var(--muted); }
+    .blog-body p { color: #3f3f46; line-height: 1.8; margin-bottom: 1rem; }
+    .blog-body ul { list-style: none; padding: 0; margin: 0.75rem 0 1rem; }
+    .blog-body ul li { color: #3f3f46; padding: 0.4rem 0 0.4rem 1.25rem; position: relative; line-height: 1.6; }
+    .blog-body ul li::before { content: "—"; position: absolute; left: 0; color: var(--dim); }
+
+    /* CALLOUT */
+    .callout { background: var(--bg2); border: 1px solid var(--border); border-left: 3px solid var(--text); border-radius: 6px; padding: 1.25rem 1.5rem; margin: 1.75rem 0; }
+    .callout p { color: var(--muted); font-size: 0.95rem; margin: 0; line-height: 1.7; }
+    .callout strong { color: var(--text); }
+
+    /* STAT BLOCK */
+    .stat-row { display: flex; gap: 1.5rem; margin: 2rem 0; flex-wrap: wrap; }
+    .stat-item { flex: 1; min-width: 140px; background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; text-align: center; }
+    .stat-number { font-size: 2rem; font-weight: 800; display: block; }
+    .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; display: block; }
+
+    /* RELATED */
+    .related { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0; }
+    .related h3 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+    .related ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+    .related ul li::before { display: none; }
+    .related ul li a { color: var(--text); font-size: 0.9rem; text-decoration: underline; text-underline-offset: 3px; }
+    .related ul li a:hover { color: var(--muted); }
+
+    /* CTA BLOCK */
+    .cta-block { background: #000; color: #fff; border-radius: 10px; padding: 2.5rem; text-align: center; margin-top: 3rem; }
+    .cta-block h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .cta-block p { color: #a1a1aa; font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6; }
+    .btn-cta { display: inline-block; background: #fff; color: #000; font-weight: 700; padding: 0.85rem 2rem; border-radius: 6px; font-size: 0.95rem; transition: background 0.2s; }
+    .btn-cta:hover { background: #e4e4e7; }
+    .cta-fine { color: #71717a; font-size: 0.75rem; margin-top: 0.75rem; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 2rem 1.5rem; }
+    .footer-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-inner p { font-size: 0.8rem; color: var(--dim); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 0.8rem; color: var(--dim); }
+    .footer-links a:hover { color: var(--muted); }
+
+    @media (max-width: 600px) {
+      .stat-row { flex-direction: column; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">RemoteJobSearch<span>.org</span></a>
+      <a href="/#offer" class="btn-primary">Get Access — $49</a>
+    </div>
+  </nav>
+
+  <div class="page-wrap">
+
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span>How to Spot Fake Remote Jobs
+    </div>
+
+    <p class="blog-label">Remote Job Search</p>
+    <h1 class="blog-title">Most Remote Jobs Are Not What They Claim</h1>
+    <p class="blog-meta">Last updated March 2026</p>
+    <p class="blog-lead">The biggest problem in remote job search is not finding jobs. It is filtering out the wrong ones. Most listings tagged "remote" are not fully remote. Here is how to tell the difference before you invest an hour of your time.</p>
+
+    <div class="blog-body">
+
+      <div class="stat-row">
+        <div class="stat-item">
+          <span class="stat-number">6%</span>
+          <span class="stat-label">of job postings are genuinely remote</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">94%</span>
+          <span class="stat-label">of "remote" listings aren't available to you</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">87%</span>
+          <span class="stat-label">of roles require on-site attendance</span>
+        </div>
+      </div>
+
+      <h2>Why Fake Remote Jobs Exist</h2>
+      <p>Companies use "remote" in job titles because it attracts more applicants. It is a reach tactic, not an accurate description. The result is that job boards are flooded with roles that appear remote in a filter but are not remote in practice.</p>
+      <p>Three patterns cause most of the problem:</p>
+      <ul>
+        <li>Mislabeling — the company checks "remote" to increase visibility</li>
+        <li>Loose definitions — "remote" means different things to different hiring managers</li>
+        <li>Hidden restrictions — location and office requirements buried in the description body</li>
+      </ul>
+
+      <h2>How to Spot Them</h2>
+      <p>The title and filter tag are not reliable. The job description body is where the truth lives. Before investing any time in an application, scan for these signals.</p>
+
+      <h3>Location language</h3>
+      <ul>
+        <li>"Based in [city]" or "must reside in [state]"</li>
+        <li>"Candidates in [region] preferred"</li>
+        <li>"Must be within [X] miles of our office"</li>
+      </ul>
+
+      <h3>Office language</h3>
+      <ul>
+        <li>"Hybrid" anywhere in the description</li>
+        <li>"In-office days required"</li>
+        <li>"Will work from our [city] headquarters"</li>
+      </ul>
+
+      <h3>Travel language</h3>
+      <ul>
+        <li>"Travel up to [X]% of the time"</li>
+        <li>"Regional territory" or "territory-based"</li>
+        <li>"Client visits required"</li>
+      </ul>
+
+      <div class="callout">
+        <p><strong>The rule:</strong> If you find any of these in the description body, the role is not fully remote. Move on. The time you save compounds across dozens of applications.</p>
+      </div>
+
+      <h2>Why Job Board Filters Fail You</h2>
+      <p>Job board remote filters rely on self-reported tags from employers. There is no verification. A company can label any role "remote" regardless of what the actual work arrangement requires.</p>
+      <p>This means the filter is only as accurate as the person who filled out the job posting form. Which is often not accurate at all.</p>
+
+      <h2>What to Do Instead</h2>
+      <p>Use job boards as a source, not a filter. Pull results from remote-first boards that have stricter listing standards — We Work Remotely, Remote OK, Himalayas. These platforms have higher signal because remote work is their entire focus.</p>
+      <p>Still verify every listing. Even remote-first boards have mislabeled roles.</p>
+      <p>The only reliable method is reading the full job description before doing any application work. Not the title. Not the tag. The full description.</p>
+
+    </div>
+
+    <div class="related">
+      <h3>Related</h3>
+      <ul>
+        <li><a href="/answers/what-is-a-fake-remote-job">What is a fake remote job?</a></li>
+        <li><a href="/answers/how-to-verify-remote-job">How to verify if a remote job is real</a></li>
+        <li><a href="/answers/are-linkedin-remote-jobs-real">Are LinkedIn remote jobs actually remote?</a></li>
+        <li><a href="/guides/remote-job-search">Remote job search guide</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-block">
+      <h3>Let the engine do the filtering.</h3>
+      <p>The Remote Job Search Engine checks every listing for location, office, and travel requirements before doing any work. Fake roles get caught and logged. You only see the real ones — with a tailored resume already built.</p>
+      <a href="/#offer" class="btn-cta">Get Access — $49 one-time</a>
+      <p class="cta-fine">Instant download. No subscription. Lifetime access.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© 2026 RemoteJobSearch.org</p>
+      <div class="footer-links">
+        <a href="/remote-job-search-tips">Free Tips</a>
+        <a href="/#how-it-works">How It Works</a>
+        <a href="/#offer">Pricing</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
